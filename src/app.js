@@ -27,7 +27,5 @@ app.listen(3021, function(){
     console.log("Servidor corriendo en http://localhost:3021");
 })
 
-
-
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
