@@ -1,0 +1,21 @@
+.form-container{
+    padding: 15px;
+    border: solid 2px #FFE74C;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.element-form{
+    padding: 10px;
+}
+
+.form-container button{
+    border-radius: 8px;
+    opacity: 0.6;
+}
+
+.registro{
+    font-size: 18px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}

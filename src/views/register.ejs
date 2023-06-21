@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/login.css">
+        <link rel="stylesheet" href="/css/index.css">
+        <link rel="stylesheet" href="/css/normalize.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    rel="stylesheet" />
+    </head>
+<header>
+    <nav>
+        <ul class="main-navbar">
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/users/login">Iniciar sesión</a>
+          </li>
+          <li>
+            <a href="/users/register">Crea tu cuenta</a>
+          </li>
+        </ul>
+      </nav>
+</header>
+<body>
+    <h2 style="text-align: center">Completá tus datos para registrarte</h2>
+    <div class="form-container">
+        <form action="/users/register" method="POST">
+            <div class="element-form">
+                <label>Nombre completo:</label>
+                <input type="text" name="nombreUsuario">
+            </div>
+            <div class="element-form">
+                <label>DNI:</label>
+                <input type="text" name="dnilUsuario">
+            </div>
+            <div class="element-form">
+                <label>Correo electrónico:</label>
+                <input type="email" name="emailUsuario">
+            </div>
+            <div class="element-form">
+                <label>Contraseña:</label>
+                <input type="password" name="passwordUsuario">
+            </div>
+            <!-- <div class="element-form">
+                <label>Imagen de perfil:</label>
+                <input type="file" name="avatar" accept=".jpg">
+            </div> -->
+            <button type="submit" class="element-form">Registrarme</button>
+            <button type="reset" class="element-form">Borrar</button>               
+        </form>
+    </div>
+</body>
+</html>
