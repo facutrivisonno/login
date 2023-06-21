@@ -22,6 +22,7 @@ app.set('view engine', 'ejs');
 
 app.use(express.static("public"));
 
+
 app.listen(3021, function(){
     console.log("Servidor corriendo en http://localhost:3021");
 })
