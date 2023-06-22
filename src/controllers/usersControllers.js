@@ -1,5 +1,8 @@
 const fs = require("fs");
 
+const path = require('path');
+const usersFilePath = path.join(__dirname, '../db/usuarios.json');
+
 const usersController = {
     login: (req,res) =>{
         res.render("login")
@@ -12,10 +15,11 @@ const usersController = {
             nombre: req.body.nombreUsuario,
             id: req.body.dnilUsuario,
             email: req.body.emailUsuario,
-            password: req.body.passwordUsuario
+            password: req.body.passwordUsuario,
+            avatar: req.file ? req.file.filename : "default-image.png"
         }
         
-        let archivoUsuario = fs.readFileSync("usuarios.json", {encoding: "utf-8"});
+        let archivoUsuario = fs.readFileSync(usersFilePath, {encoding: "utf-8"});
         let usuarios;
 
         if(archivoUsuario == ""){
@@ -29,7 +33,7 @@ const usersController = {
 
         usuarioJSON = JSON.stringify(usuarios); //convi erte en json el objeto literal usuario para poder agg al archivo json
         
-        fs.writeFileSync("usuarios.json", usuarioJSON);
+        fs.writeFileSync(usersFilePath, usuarioJSON);
     
         res.redirect("/"); 
     }
