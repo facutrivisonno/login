@@ -14,11 +14,26 @@ const usersController = {
             email: req.body.emailUsuario,
             password: req.body.passwordUsuario
         }
-    
-        let usuarioJSON = JSON.stringify(usuario); //convierte en json el objeto literal usuario
         
-        fs.appendFileSync("usuarios.json", usuarioJSON);
+        let archivoUsuario = fs.readFileSync("usuarios.json", {encoding: "utf-8"});
+        let usuarios;
+
+        if(archivoUsuario == ""){
+            usuarios = [];
+        } else{
+            usuarios = JSON.parse(archivoUsuario); //descomprimo el archivo en un obj literal
+        }
+
+
+       usuarios.push(usuario); 
+
+        usuarioJSON = JSON.stringify(usuarios); //convi erte en json el objeto literal usuario para poder agg al archivo json
+        
+        fs.writeFileSync("usuarios.json", usuarioJSON);
+    
+        res.redirect("/"); 
     }
+
 }
 
 
