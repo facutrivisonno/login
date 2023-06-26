@@ -29,8 +29,15 @@
       </nav>
 </header>
 <body>
-    <h2 style="text-align: center">Completá tus datos para registrarte</h2>
+    
     <div class="form-container">
+        <% if (locals.errors && errors.length > 0) { %>
+            <% errors.forEach(error => { %>
+                <p class="feedback"> <%= error.msg %></p>
+            <% }) %>
+        <% } %>
+        
+        
         <form action="/users/register" method="POST" enctype="multipart/form-data">
             <div class="element-form">
                 <label>Nombre completo:</label>
