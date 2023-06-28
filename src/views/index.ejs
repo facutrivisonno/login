@@ -24,8 +24,16 @@
     
   
   <body>
-    <h1 class="tituloPrincipal">Bienvenido usuario invitado a mi aplicación!</h1>
-  
+    <!-- //typeof es un operador que devuelve una cadena que indica el tipo de un valor. 
+    Cuando se aplica a una variable no definida, typeof devuelve la cadena "undefined" -->
+    
+    <% if (typeof usuarioLogueado !== 'undefined') { %>   <!--se utiliza para comprobar si la variable usuarioLogueado está definida o no. -->
+      <h1 class="tituloPrincipal">Bienvenido <%= usuarioLogueado.nombre %> a mi aplicación!</h1>
+    <% } else { %>
+      <h1 class="tituloPrincipal">Bienvenido usuario invitado a mi aplicación!</h1></p>
+    <% } %>
+
+    
   </body>
 </html>
 

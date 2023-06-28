@@ -22,10 +22,10 @@ rel="stylesheet" />
             <a href="/">Home</a>
           </li>
           <li>
-            <a href="/users/login">Iniciar sesión</a>
+            <a href="/users/login">Iniciar sesión <i class="fas fa-sign-in-alt"></i></a>
           </li>
           <li>
-            <a href="/users/register">Crea tu cuenta</a>
+            <a href="/users/register">Crea tu cuenta <i class="fas fa-user-plus"></i></a>
           </li>
         </ul>
       </nav>
@@ -34,7 +34,13 @@ rel="stylesheet" />
 <body>
         <h2 style="text-align: center">Ingresá a tu cuenta</h2>
         <div class="form-container">
-            <form action="" method="POST">
+            <% if (locals.errors && errors.length > 0) { %>
+              <% errors.forEach(error => { %>
+                  <p class="feedback"> <%= error.msg %></p>
+              <% }) %>
+          <% } %>
+          
+            <form action="/users/login" method="POST">
                 <div class="element-form">
                     <label>Correo electrónico:</label>
                     <input type="email" name="emailUsuario">

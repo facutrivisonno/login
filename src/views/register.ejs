@@ -20,16 +20,16 @@
             <a href="/">Home</a>
           </li>
           <li>
-            <a href="/users/login">Iniciar sesión</a>
+            <a href="/users/login">Iniciar sesión <i class="fas fa-sign-in-alt"></i></a>
           </li>
           <li>
-            <a href="/users/register">Crea tu cuenta</a>
+            <a href="/users/register">Crea tu cuenta <i class="fas fa-user-plus"></i></a>
           </li>
         </ul>
       </nav>
 </header>
 <body>
-    
+    <h2 style="text-align: center">Ingresá tus datos para registarte</h2>
     <div class="form-container">
         <% if (locals.errors && errors.length > 0) { %>
             <% errors.forEach(error => { %>
