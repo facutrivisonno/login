@@ -13,22 +13,47 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     rel="stylesheet" />
     </head>
-<header>
-    <nav>
-        <ul class="main-navbar">
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/users/login">Iniciar sesión <i class="fas fa-sign-in-alt"></i></a>
-          </li>
-          <li>
-            <a href="/users/register">Crea tu cuenta <i class="fas fa-user-plus"></i></a>
-          </li>
-        </ul>
+    <header>
+        <nav class="main-navbar">
+          <div>
+              <ul class="left-navbar">
+                  <li>
+                      <a href="/" class="logo">miAplicacion</a>
+                  </li>
+                  <li>
+                      <a href="/">Home</a>
+                  </li>
+                  <li>
+                      <a href="#">Nostros</i></a>
+                  </li>
+                  <li>
+                      <a href="#">Contacto</i></a>
+                  </li>
+              </ul>     
+          </div>
+          <div>
+              <ul class="right-navbar">
+              <% if (locals.isLogged) { %>
+                <li>
+                  <a href="/users/profile">miPerfil</a>
+                </li>
+                <li>
+                  <a href="/">Logout</a>
+                </li>
+              <%} else{ %>
+                  <li>
+                      <a href="/users/Login">Iniciar Sesion</i></a>
+                  </li>
+                  <li>
+                      <a href="/users/register">Registarse</i></a>
+                  </li>
+              </ul>
+              <%} %>
+          </div>
       </nav>
-</header>
-<body>
+    </header>
+
+    <body>
     <h2 style="text-align: center">Ingresá tus datos para registarte</h2>
     <div class="form-container">
         <% if (locals.errors && errors.length > 0) { %>
@@ -38,14 +63,14 @@
         <% } %>
         
         
-        <form action="/users/register" method="POST" enctype="multipart/form-data">
+        <form action="/users/register" method="POST" enctype="multipart/form-data" >
             <div class="element-form">
                 <label>Nombre completo:</label>
                 <input type="text" name="nombreUsuario">
             </div>
             <div class="element-form">
                 <label>DNI:</label>
-                <input type="text" name="dnilUsuario">
+                <input type="text" name="dniUsuario">
             </div>
             <div class="element-form">
                 <label>Correo electrónico:</label>
@@ -63,5 +88,5 @@
             <button type="reset" class="element-form">Borrar</button>               
         </form>
     </div>
-</body>
+    </body>
 </html>

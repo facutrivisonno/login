@@ -17,7 +17,7 @@
                   <a href="/">Home</a>
               </li>
               <li>
-                  <a href="#">Nosotros</i></a>
+                  <a href="#">Nostros</i></a>
               </li>
               <li>
                   <a href="#">Contacto</i></a>
@@ -28,10 +28,10 @@
           <ul class="right-navbar">
           <% if (locals.isLogged) { %>
             <li>
-              <a href="/users/profile">miPerfil</a>
+              <a href="/users/profile"><%= usuarioLogueado.nombre %></a>
             </li>
             <li>
-              <a href="/users//logout">Logout</a>
+              <a href="/users/logout">Logout</a>
             </li>
           <%} else{ %>
               <li>
@@ -45,16 +45,10 @@
       </div>
   </nav>
   </header>
-    
-  
   <body>
- 
-    <% if (locals.usuarioLogueado) { %>
-      <h1 class="tituloPrincipal">Bienvenido <%= usuarioLogueado.nombre %> a mi aplicación!</h1>
-    <% } else { %>  
-      <h1 class="tituloPrincipal">Bienvenido usuario invitado a mi aplicación!</h1>
-    <%}%> 
-
+    <%= usuarioLogueado.nombre %>
+    <img src="/img/<%= usuarioLogueado.avatar %>">
+    
   </body>
 </html>
 

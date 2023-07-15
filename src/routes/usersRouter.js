@@ -4,6 +4,8 @@ const path = require("path");
 const multer = require("multer");
 const usersController = require("../controllers/usersControllers");
 
+const guestMiddleware = require("../middleware/guestMiddleware");
+
 const {body} = require("express-validator");
 
 const storage = multer.diskStorage({
@@ -24,7 +26,7 @@ const upload = multer({storage});
 
 const validaciones = [
     body("nombreUsuario").notEmpty().withMessage("Debes completar el campo nombre"),
-    body("dnilUsuario").notEmpty().withMessage("Debes completar el campo DNI"),
+    body("dniUsuario").notEmpty().withMessage("Debes completar el campo DNI"),
     body("emailUsuario")
         .isEmail().withMessage("Debes completar un email válido")
         .notEmpty().withMessage("Debes completar el campo email"),
@@ -34,9 +36,14 @@ const validaciones = [
 ];
     
 
-router.get("/register", usersController.register);
+router.get("/register",guestMiddleware, usersController.register);
 router.post("/register", upload.single("avatar"), validaciones ,usersController.create);
 
 router.get("/login", usersController.login);
 router.post("/login", usersController.processLogin)
+
+router.get("/profile", usersController.profile);
+
+router.get("/logout", usersController.logout);
+
 module.exports = router;

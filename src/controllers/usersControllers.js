@@ -28,7 +28,7 @@ const usersController = {
                 if (usuarios[i].email == req.body.emailUsuario){
                         if (bcrypt.compareSync(req.body.passwordUsuario, usuarios[i].password)){
                             usuarioALoguearse = usuarios[i];
-                            
+                            break;
                         }
                 }    
             }
@@ -38,21 +38,32 @@ const usersController = {
                     {msg: "Credenciales invalidas"}
                 ]})
         }
-            
+          
+        delete usuarioALoguearse.password //elimina la propiedad password
         req.session.usuarioLogueado = usuarioALoguearse
 
-        res.render("index", {usuarioLogueado: req.session.usuarioLogueado})
-    
-    },
+        res.redirect("/users/profile");
 
+    },
     register: (req,res) =>{
         res.render("register")
     },
 
     create: (req,res) =>{
-       let usuario = {
+       
+        let usuarios = JSON.parse(fs.readFileSync(usersFilePath, {encoding: "utf-8"}))
+        for (let i = 0; i < usuarios.length; i++) {
+            if (usuarios[i].email == req.body.emailUsuario){
+                return res.render("register", {errors: [
+                    {msg: "Ya existe usuario con ese email"}
+                ]})
+            }    
+        }
+
+       
+        let usuario = {
             nombre: req.body.nombreUsuario,
-            id: req.body.dnilUsuario,
+            id: req.body.dniUsuario,
             email: req.body.emailUsuario,
             password: bcrypt.hashSync(req.body.passwordUsuario, 10),  //se guarda la contraseña encriptada  
             avatar: req.file && req.file.filename ? req.file.filename : "default-image.png"
@@ -81,7 +92,17 @@ const usersController = {
             
             res.render("register", { errors: errors.array()});  //envia los errores a la vista como un objeto 
         }
-    } 
+    },
+    profile: (req,res) =>{
+        console.log(req.session);
+        res.render("profile", {
+            user: req.session.usuarioLogueado
+        })
+    },
+    logout: (req,res) =>{
+        req.session.destroy();
+        res.redirect("/");
+    }
 }
 
 

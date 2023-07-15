@@ -1,37 +1,46 @@
 *{
-  box-sizing: border-box;
-}
-
-header{
-  font-size: 26px;
+  padding: 0;
+  margin: 0;
 }
 
 body{
-  background-color: #FF5964;
-  font-size: 20px;
-  margin: 0;
-  padding: 0;
+  font-size: 21px;
+  color: white;
+  background-color: #C2C9CD;
 }
 
-.main-navbar{
+nav{
+  background-color: #547794;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
 
 }
 
-.main-navbar li{
-  padding: 10px;
+.left-navbar {
+  display: flex;
+  align-items: center;
+
+}
+
+.right-navbar {
+  display: flex;
+  justify-items: center;
+  flex-grow: 1;
+}
+
+ul li {
+  padding: 15px;
   list-style: none;
 }
 
 a{
-  text-decoration: none;  
+  text-decoration: none;
   color: aliceblue;
-}  
-
-.flexboxNavbar{
-  display: flex;
 }
 
-.tituloPrincipal{
-  padding: 0 45px;
+.logo{
+  font-size: 36px;
 }
+
