@@ -6,45 +6,9 @@
     <link rel='stylesheet' href='/css/normalize.css' />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   </head>
-  <header>
-    <nav class="main-navbar">
-      <div>
-          <ul class="left-navbar">
-              <li>
-                  <a href="/" class="logo">miAplicacion</a>
-              </li>
-              <li>
-                  <a href="/">Home</a>
-              </li>
-              <li>
-                  <a href="#">Nostros</i></a>
-              </li>
-              <li>
-                  <a href="#">Contacto</i></a>
-              </li>
-          </ul>     
-      </div>
-      <div>
-          <ul class="right-navbar">
-          <% if (locals.isLogged) { %>
-            <li>
-              <a href="/users/profile"><%= usuarioLogueado.nombre %></a>
-            </li>
-            <li>
-              <a href="/users/logout">Logout</a>
-            </li>
-          <%} else{ %>
-              <li>
-                  <a href="/users/Login">Iniciar Sesion</i></a>
-              </li>
-              <li>
-                  <a href="/users/register">Registarse</i></a>
-              </li>
-          </ul>
-          <%} %>
-      </div>
-  </nav>
-  </header>
+  
+  <%- include ("./partials/header") %> 
+  
   <body>
     <%= usuarioLogueado.nombre %>
     <img src="/img/<%= usuarioLogueado.avatar %>">

@@ -13,45 +13,8 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     rel="stylesheet" />
     </head>
-    <header>
-        <nav class="main-navbar">
-          <div>
-              <ul class="left-navbar">
-                  <li>
-                      <a href="/" class="logo">miAplicacion</a>
-                  </li>
-                  <li>
-                      <a href="/">Home</a>
-                  </li>
-                  <li>
-                      <a href="#">Nostros</i></a>
-                  </li>
-                  <li>
-                      <a href="#">Contacto</i></a>
-                  </li>
-              </ul>     
-          </div>
-          <div>
-              <ul class="right-navbar">
-              <% if (locals.isLogged) { %>
-                <li>
-                  <a href="/users/profile">miPerfil</a>
-                </li>
-                <li>
-                  <a href="/">Logout</a>
-                </li>
-              <%} else{ %>
-                  <li>
-                      <a href="/users/Login">Iniciar Sesion</i></a>
-                  </li>
-                  <li>
-                      <a href="/users/register">Registarse</i></a>
-                  </li>
-              </ul>
-              <%} %>
-          </div>
-      </nav>
-    </header>
+    
+    <%- include ("./partials/header") %> 
 
     <body>
     <h2 style="text-align: center">Ingresá tus datos para registarte</h2>
