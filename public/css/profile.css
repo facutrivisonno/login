@@ -1,0 +1,20 @@
+.conteiner-profile{
+    border: 1px solid #FFE74C;
+    padding: 30px;
+    margin: 40px;
+    max-width: 50%;
+}
+
+.name-profile{
+    font-size: 45px;
+}
+
+.email-profile{
+    font-size: 20px;
+}
+
+.img-avatar{
+    width: 200px;
+    overflow: hidden;
+    margin-top: 12px;
+} 

@@ -20,6 +20,10 @@ html {
  * Remove the margin in all browsers.
  */
 
+img{
+  width:100%;
+} 
+
 body {
   margin: 0;
   padding: 0;
@@ -357,3 +361,8 @@ img {
   max-width: 100%;
 }
 
+body{
+  font-size: 21px;
+  color: white;
+  background-color: #C2C9CD;
+}

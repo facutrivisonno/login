@@ -64,6 +64,7 @@ const usersController = {
         let usuario = {
             nombre: req.body.nombreUsuario,
             id: req.body.dniUsuario,
+            cateogoria: req.body.categoria,
             email: req.body.emailUsuario,
             password: bcrypt.hashSync(req.body.passwordUsuario, 10),  //se guarda la contraseña encriptada  
             avatar: req.file && req.file.filename ? req.file.filename : "default-image.png"
@@ -98,6 +99,11 @@ const usersController = {
         res.render("profile", {
             user: req.session.usuarioLogueado
         })
+    },
+    admin: (req,res) =>{
+        let usuarios = JSON.parse(fs.readFileSync(usersFilePath, {encoding: "utf-8"}))
+
+        res.render("administrador", {usuarios})
     },
     logout: (req,res) =>{
         req.session.destroy();

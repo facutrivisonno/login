@@ -1,0 +1,46 @@
+.styled-table { 
+    border-collapse: collapse; 
+    margin: 25px 0; 
+    font-size: 0.8em; 
+    min-width: 450px; 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+}
+
+.styled-table thead tr { 
+    background-color: #2789b6; 
+    color: #ffffff; 
+    text-align: middle; 
+}
+
+.styled-table tbody td { 
+    color: #000000; 
+    text-align: middle; 
+}
+
+.styled-table tbody td a {
+    display: block; /* Convierte el enlace en un bloque para ocupar todo el espacio de la celda */
+    text-align: center; /* Centrar el contenido (incluido el ícono) horizontalmente */
+}
+
+.styled-table tbody td i{ 
+    color: #000000; 
+}
+
+
+
+.styled-table th, .styled-table td { 
+    padding: 14px 20px; 
+}
+
+.styled-table tbody tr { 
+    border-bottom: 1px solid #dddddd; 
+} 
+    
+.styled-table tbody tr:nth-of-type(even) { 
+    background-color: #f3f3f3; 
+} 
+
+.styled-table tbody tr:last-of-type { 
+    border-bottom: 2px solid #009879; 
+}

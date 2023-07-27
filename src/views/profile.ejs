@@ -2,16 +2,30 @@
 <html>
   <head>
     <title>Login</title>
-    <link rel='stylesheet' href='/css/index.css' />
+    <link rel='stylesheet' href='/css/header.css' />
     <link rel='stylesheet' href='/css/normalize.css' />
+    <link rel='stylesheet' href='/css/profile.css' />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   </head>
   
   <%- include ("./partials/header") %> 
   
   <body>
-    <%= usuarioLogueado.nombre %>
-    <img src="/img/<%= usuarioLogueado.avatar %>">
+      <div class="conteiner-profile">
+        <span class="name-profile">
+          <%= usuarioLogueado.nombre %>
+        </span>  <br>
+        <span class="email-profile">
+          <%= usuarioLogueado.email %>
+        </span>
+        <figure class="img-avatar">
+           <img src="/img/<%= usuarioLogueado.avatar %>">
+        </figure>
+       
+      </div>
+    
+    
+    
     
   </body>
 </html>

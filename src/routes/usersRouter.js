@@ -42,6 +42,8 @@ router.post("/register", upload.single("avatar"), validaciones ,usersController.
 router.get("/login", usersController.login);
 router.post("/login", usersController.processLogin)
 
+router.get("/admin", usersController.admin);
+
 router.get("/profile", usersController.profile);
 
 router.get("/logout", usersController.logout);
