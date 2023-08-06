@@ -8,8 +8,8 @@ const usersRouter = require("./routes/usersRouter");
 const userLoggedMiddleware = require("./middleware/userLoggedMiddleware");
 
 // Implementar los metodos PUT y DELETE
-/* const methodOverride = require("method-override");
-app.use(methodOverride("_method")); */
+const methodOverride = require("method-override");
+app.use(methodOverride("_method"));
 
 // Configuracion para capturar los datos que se envian en los formularios (capturarlo en forma de ob. literal)
 app.use(express.urlencoded({extended: false}));

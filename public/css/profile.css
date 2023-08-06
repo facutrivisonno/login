@@ -1,20 +1,34 @@
-.conteiner-profile{
-    border: 1px solid #FFE74C;
-    padding: 30px;
-    margin: 40px;
-    max-width: 50%;
-}
+.conteiner-profile {
+    max-width: 400px;
+    margin: 30px ;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    text-align: center;
+  }
 
-.name-profile{
-    font-size: 45px;
-}
+  .name-profile {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 30px;
+  }
 
-.email-profile{
-    font-size: 20px;
-}
-
-.img-avatar{
-    width: 200px;
-    overflow: hidden;
+  .email-profile {
+    font-size: 18px;
+    color: #666;
     margin-top: 12px;
-} 
+  }
+  
+  .img-avatar img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 12px;
+    transition: transform 0.2s ease;
+
+  }
+
+.img-avatar img:hover {
+    transform: scale(1.1); 
+}

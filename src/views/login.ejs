@@ -18,7 +18,7 @@ rel="stylesheet" />
 <%- include ("./partials/header") %> 
  
 <body>
-        <h2 style="text-align: center">Ingresá a tu cuenta</h2>
+        <h2>Ingresá a tu cuenta</h2>
         <div class="form-container">
             <% if (locals.errors && errors.length > 0) { %>
               <% errors.forEach(error => { %>
@@ -38,8 +38,8 @@ rel="stylesheet" />
                 <div class="registro">
                   ¿Aún no estas registrado? <a href="/users/register">Haga click aqui</a>
                 </div>
-                <button type="submit">Registrarme</button>
-                <button type="reset">Borrar</button>               
+                <button type="submit" class="element-form">Ingresar</button>
+                <button type="reset" class="element-form">Borrar</button>               
             </form>
         </div>
 </body>

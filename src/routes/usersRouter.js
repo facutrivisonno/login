@@ -44,6 +44,13 @@ router.post("/login", usersController.processLogin)
 
 router.get("/admin", usersController.admin);
 
+router.get("/detail/:id", usersController.detail);
+
+router.get("/edit/:id", usersController.edit);
+router.put("/edit/:id",upload.single("avatar"), validaciones , usersController.processEdit);
+
+router.delete("/delete/:id", usersController.delete);
+
 router.get("/profile", usersController.profile);
 
 router.get("/logout", usersController.logout);

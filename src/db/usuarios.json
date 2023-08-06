@@ -1,1 +1,20 @@
-[{"nombre":"Facundo Trivisonno","id":"39368523","cateogoria":"1","email":"facundo@gmail.com","password":"$2a$10$4hW3LRe6skqanZyxIAWjBeX/qGzDnrbZn0Nolm8LtKrHx6CNx1Qc2","avatar":"default-image.png"},{"nombre":"Lionel Messi","id":"4565898","cateogoria":"0","email":"messi@gmail.com","password":"$2a$10$CY4q.rn5.ko6lRXFHud7i.8hOdd4KIBi//Urh8PUi2voNHzY.wyiu","avatar":"default-image.png"},{"nombre":"Angel Di Maria","id":"24569852","cateogoria":"1","email":"dimaria@gmail.com","password":"$2a$10$KPoqBoufNrSbzHg3Mf3Uy.xvyAmK/BOlve6BU9buW9zFcU9Qr1ih2","avatar":"user-1690471825202.jpg"}]
+[
+ {
+  "id": 0,
+  "nombre": "Facundo Trivisonno",
+  "dni": "39368536",
+  "cateogoria": "1",
+  "email": "facundo@gmail.com",
+  "password": "$2a$10$6N2Ls1NPlbXAXp8EfPjAn.Qg1C5g2yqq/pGH.1WtP7.v979LXWw2C",
+  "avatar": "default-image.png"
+ },
+ {
+  "id": 1,
+  "nombre": "Lio Messi",
+  "dni": "32432432",
+  "cateogoria": "0",
+  "email": "messi@gmail.com",
+  "password": "$2a$10$LPfgj0Z5A/ZWPdYxy6Wbve9XUK0WDrAC1O5HYkDmpFcuxJ.8MRS4K",
+  "avatar": "default-image.png"
+ }
+]

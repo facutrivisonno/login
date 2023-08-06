@@ -13,20 +13,16 @@
   <body>
       <div class="conteiner-profile">
         <span class="name-profile">
-          <i class="fas fa-user"></i><%= usuarioLogueado.nombre %>
+            <i class="fas fa-user"></i> <%= usuario.nombre %>
         </span>  <br>
         <span class="email-profile">
-          <i class="far fa-envelope"></i><%= usuarioLogueado.email %>
+            <i class="far fa-envelope"></i> <%= usuario.email %>
         </span>
         <figure class="img-avatar">
-           <img src="/img/<%= usuarioLogueado.avatar %>">
+           <img src="/img/<%= usuario.avatar %>">
         </figure>
        
-      </div>
-    
-    
-    
-    
+      </div> 
   </body>
 </html>
 
