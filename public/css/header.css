@@ -16,8 +16,9 @@ nav{
 .left-navbar {
   display: flex;
   align-items: center;
-
+  
 }
+
 
 .right-navbar {
   display: flex;
@@ -33,7 +34,20 @@ ul li {
 a{
   text-decoration: none;
   color: aliceblue;
+  transition: all 0.5s;
 }
+
+.left-navbar a {
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.left-navbar a:hover {
+  color: rgb(190, 187, 187);
+  text-decoration:underline;
+  transition: color 0.3s ease, background-color 0.3s ease; /* Transiciones suaves */
+}
+
 
 .logo{
   font-size: 36px;
@@ -48,6 +62,8 @@ a{
   display: flex;
   align-items: center;
 }
+
+
 
 .img-avatar-container{
   width: 40px;
