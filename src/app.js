@@ -2,7 +2,8 @@ const express = require("express");
 const path = require("path");
 
 const app = express();
-import {PORT} from "./config.js";
+const config = require("./config.js");
+const PORT = config.PORT;
 
 const indexRouter = require("./routes/indexRouter");
 const usersRouter = require("./routes/usersRouter");
