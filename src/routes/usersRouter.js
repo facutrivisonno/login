@@ -21,18 +21,31 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage});
 
+// funcion que verifica que sean solo numeros
+const esNumero = (value) => {
+    return /^[0-9]+$/.test(value);
+};
+
 
 //validaciones formulario de registro
 
 const validaciones = [
-    body("nombreUsuario").notEmpty().withMessage("Debes completar el campo nombre"),
-    body("dniUsuario").notEmpty().withMessage("Debes completar el campo DNI"),
+    body("nombreUsuario")
+        .notEmpty()
+        .withMessage("Debes completar el campo nombre"),
+    body("dniUsuario")
+        .notEmpty()
+        .withMessage("Debes completar el campo DNI"),
+
     body("emailUsuario")
         .isEmail().withMessage("Debes completar un email válido")
         .notEmpty().withMessage("Debes completar el campo email"),
     body("passwordUsuario")
-        .isLength({ min: 8 }).withMessage("La contraseña debe tener un mínimo de 8 caracteres")
-        .notEmpty().withMessage("Debes completar el campo contraseña")
+        .notEmpty()
+        .withMessage('Ingrese su contraseña')
+        .bail()  // Esta función indica que si una validación falla, el proceso de validación debe detenerse y no se deben realizar más validaciones en el mismo campo
+        .matches(/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/)
+        .withMessage('Su contraseña debe tener al menos una letra mayúscula, una minúscula, un número y al menos 8 caracteres. No debe incluir un caracter especial.')
 ];
     
 

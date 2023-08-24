@@ -1,76 +1,95 @@
 *{
   padding: 0;
   margin: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-
-nav{
-  background-color: #547794;
+header, .menu {
+  margin: 0;
+}
+.menu{
+  background-color: #333;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 75px;
+}
+
+.logo{
+  font-size: 35px;
   padding: 0 30px;
-
+  color: #FFF;
 }
 
-.left-navbar {
+.navbar {
+  margin-right: 30px;
   display: flex;
-  align-items: center;
-  
-}
-
-
-.right-navbar {
-  display: flex;
-  justify-items: center;
-  flex-grow: 1;
-}
-
-ul li {
-  padding: 15px;
   list-style: none;
+  gap: 1rem;
 }
 
-a{
-  text-decoration: none;
-  color: aliceblue;
-  transition: all 0.5s;
+.navbar li {
+  margin: 0 8px;
 }
 
-.left-navbar a {
-  text-decoration: none;
+.navbar li a{
+  padding: 7px 10px;
+  font-size: 22px;
+  display: block;
+  color: #FFA500;
   transition: all 0.2s;
 }
 
-.left-navbar a:hover {
-  color: rgb(190, 187, 187);
-  text-decoration:underline;
+.navbar li a:hover {
+  background-color: rgb(126, 121, 121);
   transition: color 0.3s ease, background-color 0.3s ease; /* Transiciones suaves */
 }
 
 
-.logo{
-  font-size: 36px;
+.hamburguer-button{
+  cursor: pointer;
+  display: none;
+  color: #FFA500;
 }
 
-.right-navbar li{
+.navbar li a{
   display: flex;
   align-items: center;
 }
-
-.right-navbar li a{
-  display: flex;
-  align-items: center;
-}
-
-
 
 .img-avatar-container{
-  width: 40px;
-  height: 40px;
+  width: 22px;
+  height: 25px;
   border-radius: 50%;
   overflow: hidden;
   margin-bottom: 6px;
   margin-right: 8px;
 }
 
+@media (max-width: 864px){
+  .navbar {
+      display: none; /* Oculta las opciones del menú */
+      flex-direction: column;
+      background-color: #333;
+      position: absolute;
+      top: 5rem;
+      left: 0;
+      width: 100%;
+      color: rgb(240, 62, 62);
+      margin-top: 0;
+    }
+    .navbar li a{
+      color: #FFA500;
+    }
+    .hamburguer-button {
+      display: block; /* Muestra el botón de hamburguesa en resoluciones menores */
+      margin-right: 30px;
+    }
+  
+    .menu.active .navbar {
+      display: flex; /* Muestra las opciones del menú cuando se activa */
+    }
+
+}

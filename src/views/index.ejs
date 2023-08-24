@@ -16,12 +16,14 @@
   <body>
  
     <% if (locals.usuarioLogueado) { %>
-      <h1 class="tituloPrincipal">Bienvenido <%= usuarioLogueado.nombre %> a mi aplicación!</h1>
+      <h1 style="padding:10px">Bienvenido <%= usuarioLogueado.nombre %> a mi aplicación!</h1>
     <% } else { %>  
-      <h1 class="tituloPrincipal">Bienvenido usuario invitado a mi aplicación!</h1>
+      <h1 style="padding:10px">Bienvenido usuario invitado a mi aplicación!</h1>
     <%}%> 
-
   </body>
-</html>
+
+  <script src="/js/script.js"></script> 
+
+  </html>
 
 

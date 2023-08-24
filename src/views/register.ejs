@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/css/login.css">
+        <link rel="stylesheet" href="/css/register.css">
         <link rel="stylesheet" href="/css/header.css">
         <link rel="stylesheet" href="/css/normalize.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,46 +17,50 @@
     <%- include ("./partials/header") %> 
 
     <body>
-    <h2 style="text-align: center">Ingresá tus datos para registarte</h2>
-    <div class="form-container">
-        <% if (locals.errors && errors.length > 0) { %>
-            <% errors.forEach(error => { %>
-                <p class="feedback"> <%= error.msg %></p>
-            <% }) %>
-        <% } %>
+    <h2>Ingresá tus datos para registarte</h2>
         
-        
-        <form action="/users/register" method="POST" enctype="multipart/form-data" >
-            <div class="element-form">
-                <label>Nombre completo:</label>
-                <input type="text" name="nombreUsuario">
-            </div>
-            <div class="element-form">
-                <label>DNI:</label>
-                <input type="text" name="dniUsuario">
-            </div>
-            <div class="element-form">
-                <label>Categoria de usuario:</label>
-                <select name="categoria">
-                    <option value=0 selected>Estándar</option>
-                    <option value=1>Administrador</option>
-                </select>
-            </div>
-            <div class="element-form">
-                <label>Correo electrónico:</label>
-                <input type="email" name="emailUsuario">
-            </div>
-            <div class="element-form">
-                <label>Contraseña:</label>
-                <input type="password" name="passwordUsuario">
-            </div>
-            <div class="element-form">
-                <label>Imagen de perfil:</label>
-                <input type="file" name="avatar" accept=".jpg">
-            </div>
-            <button type="submit" class="element-form">Registrarme</button>
-            <button type="reset" class="element-form">Borrar</button>               
-        </form>
-    </div>
+        <div class="container">
+            <form action="/users/register" method="POST" enctype="multipart/form-data" class="registration-form">
+                <% if (locals.errors && errors.length > 0) { %>
+                    <% errors.forEach(error => { %>
+                        <p class="feedback"> <%= error.msg %></p>
+                    <% }) %>
+                <% } %>
+                <div class="element-form">
+                    <label>Nombre completo:</label>
+                    <input type="text" name="nombreUsuario">
+                </div>
+                <div class="element-form">
+                    <label>DNI:</label>
+                    <input type="text" name="dniUsuario">
+                </div>
+                <div class="element-form">
+                    <label>Categoría de usuario:</label>
+                    <select name="categoria">
+                        <option value="0" selected>Estándar</option>
+                        <option value="1">Administrador</option>
+                    </select>
+                </div>
+                <div class="element-form">
+                    <label>Correo electrónico:</label>
+                    <input type="email" name="emailUsuario">
+                </div>
+                <div class="element-form">
+                    <label>Contraseña:</label>
+                    <input type="password" name="passwordUsuario">
+                </div>
+                <div class="element-form">
+                    <label>Imagen de perfil:</label>
+                    <input type="file" name="avatar" accept=".jpg">
+                </div>
+                <div class="element-form">
+                    <button type="submit">Registrarme</button>
+                    <button type="reset">Borrar</button>
+                </div>
+            </form>
+        </div>
     </body>
+
+    <script src="/js/script.js"></script> 
+
 </html>

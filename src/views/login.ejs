@@ -19,14 +19,14 @@ rel="stylesheet" />
  
 <body>
         <h2>Ingresá a tu cuenta</h2>
-        <div class="form-container">
+        <div class="container">
             <% if (locals.errors && errors.length > 0) { %>
               <% errors.forEach(error => { %>
                   <p class="feedback"> <%= error.msg %></p>
               <% }) %>
           <% } %>
           
-            <form action="/users/login" method="POST">
+            <form action="/users/login" method="POST" class="registration-form">
                 <div class="element-form">
                     <label>Correo electrónico:</label>
                     <input type="email" name="emailUsuario">
@@ -36,10 +36,12 @@ rel="stylesheet" />
                     <input type="password" name="passwordUsuario">
                 </div>
                 <div class="registro">
-                  ¿Aún no estas registrado? <a href="/users/register">Haga click aqui</a>
+                  ¿Aún no estas registrado? <a href="/users/register" class="hipervinculo-registro">Haga click aqui</a>
                 </div>
-                <button type="submit" class="element-form">Ingresar</button>
-                <button type="reset" class="element-form">Borrar</button>               
+                <div class="element-form">    
+                    <button type="submit" class="element-form">Ingresar</button>
+                    <button type="reset" class="element-form">Borrar</button>         
+                </div>          
             </form>
         </div>
 </body>
