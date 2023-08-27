@@ -20,35 +20,56 @@
     <h2>Ingresá tus datos para registarte</h2>
         
         <div class="container">
-            <form action="/users/register" method="POST" enctype="multipart/form-data" class="registration-form">
-                <% if (locals.errors && errors.length > 0) { %>
-                    <% errors.forEach(error => { %>
-                        <p class="feedback"> <%= error.msg %></p>
-                    <% }) %>
-                <% } %>
-                <div class="element-form">
-                    <label>Nombre completo:</label>
-                    <input type="text" name="nombreUsuario">
+            <form action="/users/register" method="POST" enctype="multipart/form-data" class="registration-form" id="formulario">
+                <div class="errores-form">
+                    <% if (locals.errors && errors.length > 0) { %>
+                        <p>Debe completar los campos correctamente</p>
+                        <!-- <% errors.forEach(error => { %>
+                            <p class="feedback"> <%= error.msg %></p>
+                        <% }) %> -->
+                    <% } %>
+                </div>    
+                    
+                <div id="grupo-nombreUsuario">    
+                    <div class="element-form" id="input-nombreUsuario">
+                        <label>Nombre completo:</label>
+                        <input type="text" name="nombreUsuario" class="formulario-input">
+                    </div>
+                    <p class="formulario-input-error">El nombre debe ser correcto</p>
                 </div>
-                <div class="element-form">
-                    <label>DNI:</label>
-                    <input type="text" name="dniUsuario">
+                
+                <div id="grupo-dniUsuario">  
+                    <div class="element-form" id="input-dniUsuario">
+                        <label>DNI:</label>
+                        <input type="text" name="dniUsuario" class="formulario-input">
+                    </div>
+                    <p class="formulario-input-error">Debe ingresar un DNI válido</p>
                 </div>
-                <div class="element-form">
-                    <label>Categoría de usuario:</label>
-                    <select name="categoria">
-                        <option value="0" selected>Estándar</option>
-                        <option value="1">Administrador</option>
-                    </select>
+                
+                    <div class="element-form">
+                        <label>Categoría de usuario:</label>
+                        <select name="categoria">
+                            <option value="0" selected>Estándar</option>
+                            <option value="1">Administrador</option>
+                        </select>
+                    </div>
+                
+                <div id="grupo-emailUsuario"> 
+                    <div class="element-form" id="input-emailUsuario">
+                        <label>Correo electrónico:</label>
+                        <input type="email" name="emailUsuario" class="formulario-input">
+                    </div>
+                    <p class="formulario-input-error">Debes ingresar un correo válido</p>
+                </div>  
+                
+                <div id="grupo-passwordUsuario">
+                    <div class="element-form" id="input-passwordUsuario">
+                        <label>Contraseña:</label>
+                        <input type="password" name="passwordUsuario" class="formulario-input">
+                    </div>
+                    <p class="formulario-input-error">La contraseña debe contener al menos 8 digitos, un numero y una letra mayuscula</p>
                 </div>
-                <div class="element-form">
-                    <label>Correo electrónico:</label>
-                    <input type="email" name="emailUsuario">
-                </div>
-                <div class="element-form">
-                    <label>Contraseña:</label>
-                    <input type="password" name="passwordUsuario">
-                </div>
+
                 <div class="element-form">
                     <label>Imagen de perfil:</label>
                     <input type="file" name="avatar" accept=".jpg">

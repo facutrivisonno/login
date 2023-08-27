@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/css/login.css">
+        <link rel="stylesheet" href="/css/register.css">
         <link rel="stylesheet" href="/css/header.css">
         <link rel="stylesheet" href="/css/normalize.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,36 +18,44 @@
 
     <body>
     <h2 style="text-align: center">Ingresá tus datos para registarte</h2>
-    <div class="form-container">
-        <% if (locals.errors && errors.length > 0) { %>
-            <% errors.forEach(error => { %>
-                <p class="feedback"> <%= error.msg %></p>
-            <% }) %>
-        <% } %>
-        
-        
-        <form action="/users/edit/<%= usuario.id %>?_method=PUT" method="POST" enctype="multipart/form-data" >
+    <div class="container">
+        <form action="/users/edit/<%=usuario.id%>?_method=put" method="POST" enctype="multipart/form-data" class="registration-form">
+            <% if (locals.errors && errors.length > 0) { %>
+                <% errors.forEach(error => { %>
+                    <p class="feedback"> <%= error.msg %></p>
+                <% }) %>
+            <% } %>
             <div class="element-form">
                 <label>Nombre completo:</label>
-                <input value="<%= usuario.nombre %>" type="text" name="nombreUsuario">
+                <input type="text" name="nombreUsuario" value="<%=usuario.nombre %>">
             </div>
             <div class="element-form">
-                <label>Categoria de usuario:</label>
+                <label>DNI:</label>
+                <input type="text" name="dniUsuario" value="<%=usuario.dni %>">
+            </div>
+            <div class="element-form">
+                <label>Categoría de usuario:</label>
                 <select name="categoria">
-                    <option value=0 selected>Estándar</option>
-                    <option value=1>Administrador</option>
+                    <option value="0" selected>Estándar</option>
+                    <option value="1">Administrador</option>
                 </select>
             </div>
             <div class="element-form">
                 <label>Correo electrónico:</label>
-                <input type="email" name="emailUsuario">
+                <input type="email" name="emailUsuario" value="<%=usuario.email %>">
+            </div>
+            <div class="element-form">
+                <label>Contraseña:</label>
+                <input type="password" name="passwordUsuario">
             </div>
             <div class="element-form">
                 <label>Imagen de perfil:</label>
                 <input type="file" name="avatar" accept=".jpg">
             </div>
-            <button type="submit" class="element-form">Modificar</button>
-            <button type="reset" class="element-form">Borrar</button>               
+            <div class="element-form">
+                <button type="submit">Editar</button>
+                <button type="reset">Borrar</button>
+            </div>
         </form>
     </div>
     </body>
