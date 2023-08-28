@@ -24,6 +24,12 @@ h2{
     padding: 20px;
 }
 
+.feedback{
+    color:#bb2929;
+    font-weight: 700;
+    padding-bottom: 15px;
+}
+
 
 .registration-form {
     background-color: #f5f5f5;

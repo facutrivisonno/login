@@ -20,13 +20,14 @@ rel="stylesheet" />
 <body>
         <h2>Ingresá a tu cuenta</h2>
         <div class="container">
-            <% if (locals.errors && errors.length > 0) { %>
-              <% errors.forEach(error => { %>
-                  <p class="feedback"> <%= error.msg %></p>
-              <% }) %>
-          <% } %>
+            
           
             <form action="/users/login" method="POST" class="registration-form">
+                <% if (locals.errors && errors.length > 0) { %>
+                    <% errors.forEach(error => { %>
+                        <p class="feedback"> <%= error.msg %></p>
+                    <% }) %>
+                  <% } %>
                 <div class="element-form">
                     <label>Correo electrónico:</label>
                     <input type="email" name="emailUsuario">
