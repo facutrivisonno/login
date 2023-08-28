@@ -92,4 +92,8 @@ header, .menu {
       display: flex; /* Muestra las opciones del menú cuando se activa */
     }
 
+    .logo{
+      font-size: 22px;
+    }
+
 }

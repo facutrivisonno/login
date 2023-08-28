@@ -32,6 +32,7 @@ body {
 
 .welcome-container {
   text-align: center;
+  padding-top: 30px;
 }
 
 .welcome-message {
