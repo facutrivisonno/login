@@ -3,14 +3,14 @@
   margin: 0;
   text-decoration: none;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 header, .menu {
   margin: 0;
 }
 .menu{
-  background-color: #333;
+  background-color: #222;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,7 +20,7 @@ header, .menu {
 .logo{
   font-size: 35px;
   padding: 0 30px;
-  color: #FFF;
+  color: #FFA500;
 }
 
 .navbar {
@@ -38,12 +38,12 @@ header, .menu {
   padding: 7px 10px;
   font-size: 22px;
   display: block;
-  color: #FFA500;
+  color: #FFF;
   transition: all 0.2s;
 }
 
 .navbar li a:hover {
-  background-color: rgb(126, 121, 121);
+  background-color: #FFA500;
   transition: color 0.3s ease, background-color 0.3s ease; /* Transiciones suaves */
 }
 

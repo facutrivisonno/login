@@ -78,6 +78,18 @@ window.onload = function(){
             e.preventDefault();
         }
     });
+
+    const btnBorrar = document.getElementById("btn-borrar");
+
+    btnBorrar.addEventListener("click", () => {
+        const inputElements = document.querySelectorAll(".element-form");
+
+        inputElements.forEach(input => {
+            input.classList.remove("formulario-input-incorrecto");
+            input.classList.remove("formulario-input-correcto");
+        });
+    });
+
 }
 
 

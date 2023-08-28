@@ -1,0 +1,71 @@
+/* Estilos generales */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #181818;
+  color: #eee;
+}
+
+/* Estilos del encabezado y el menú */
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #282828;
+  padding: 15px 30px;
+}
+
+.hamburguer-button {
+  cursor: pointer;
+  font-size: 20px;
+  color: #fff;
+}
+
+/* Estilos del contenido principal */
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 100px);
+}
+
+.welcome-container {
+  text-align: center;
+}
+
+.welcome-message {
+  font-size: 32px;
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+.welcome-message2{
+  font-size: 32px;
+  font-weight: bold;
+  color: #4CAF50;
+  padding-left: 60px;
+}
+
+.sub-message {
+  font-size: 18px;
+  color: #aaa;
+  margin-top: 10px;
+}
+
+.link {
+  color: #4CAF50;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.link:hover {
+  color: #45a049;
+}
+
+/* Estilos del pie de página */
+.footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #282828;
+}

@@ -1,3 +1,10 @@
+
+
+h1{
+    padding-left :30px;
+    color:#000
+}
+
 .table-container {
         overflow-x: auto;
         max-width: 100%; /* Asegura que el contenedor no sea más ancho que la pantalla */

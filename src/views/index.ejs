@@ -7,6 +7,7 @@
     <title>Login</title>
     <link rel='stylesheet' href='/css/header.css' />
     <link rel='stylesheet' href='/css/normalize.css' />
+    <link rel='stylesheet' href='/css/index.css' />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,10 +19,17 @@
   <body>
  
     <% if (locals.usuarioLogueado) { %>
-      <h1 style="padding:0 28px">Bienvenido <%= usuarioLogueado.nombre %> a mi aplicación!</h1>
+      <h1 class="welcome-message2">Bienvenido <%= usuarioLogueado.nombre %> a mi aplicación!</h1>
     <% } else { %>  
-      <h1 style="padding:0 28px ">Bienvenido usuario invitado a mi aplicación!</h1>
-    <%}%> 
+      <div class="welcome-container">
+        <h1 class="welcome-message">¡ Bienvenido !</h1>
+        <p class="sub-message">
+          <a href="/users/Login" class="link">Inicia sesión</a> o 
+          <a href="/users/register" class="link">regístrate</a>
+        </p>
+      </div>
+    <%}%>
+  
   </body>
 
   <script src="/js/script.js"></script> 
